@@ -4,6 +4,10 @@ module Stoker
     version 'v1', using: :header, vendor: 'cyfronet'
     format :json
 
+    get do
+      'REST service for generating load at the machine it is hosted at.'
+    end
+
     resource :loads do
       # desc 'Generates given CPU load'
       # params do
@@ -14,8 +18,8 @@ module Stoker
       # end
 
       get do
-        puts "Getting load..."
-        {'h' => 'ura'}
+        system 'stress --cpu 1 --timeout 5 > /dev/null 2> /dev/null &'
+        'zestresowalem'
       end
     end
   end
