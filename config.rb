@@ -27,19 +27,19 @@
 #
 # The default is “development”.
 #
-environment 'production'
+#environment 'production'
 
 # Daemonize the server into the background. Highly suggest that
 # this be combined with “pidfile” and “stdout_redirect”.
 #
 # The default is “false”.
 #
-daemonize
+daemonize false
 # daemonize false
 
 # Store the pid of the server in the file at “path”.
 #
-# pidfile '/u/apps/lolcat/tmp/pids/puma.pid'
+#pidfile './puma.pid'
 
 # Use “path” as the file to store the server info state. This is
 # used by “pumactl” to query and control the server.
@@ -50,7 +50,7 @@ daemonize
 # (“append”) specifies whether the output is appended, the default is
 # “false”.
 #
-stdout_redirect '/home/stoker/stoker/out.log', '/home/stoker/stoker/error.log'
+#stdout_redirect './out.log', './error.log'
 # stdout_redirect '/u/apps/lolcat/log/stdout', '/u/apps/lolcat/log/stderr', true
 
 # Disable request logging.
