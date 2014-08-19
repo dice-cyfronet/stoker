@@ -4,49 +4,49 @@
 * Linux cpulimit tool
 * Ruby (developed and tested with 2.1.2)
 * git
-* Bundler (http://http://bundler.io/)
+* Bundler (http://bundler.io/)
 
 ## Installation
 
+Stoker should be run from a normal user account and can be installed without superuser priviledges provided that above mentioned prerequisites are met.
+
 1. Clone stoker git repository
 ```
-git clone git@dev.cyfronet.pl:atmosphere/stoker.git
+export GIT_SSL_NO_VERIFY=1
+git clone https://gitlab.dev.cyfronet.pl/atmosphere/stoker.git
 ```
+Server certificate needs to be disabled since dice's gitlab uses self-signed certificate.
 2. Enter stoker directory.
 ```
 cd stoker
 ```
 3. Install required gems
 ```
-bundle install
+bundle install --deployment
 ```
 
 ## Configuration
 
-Change application environment in config.rb for instance to:
+Create configuration file based on a provided example.
+```
+cp config.rb.example config.rb
+```
+Introduce required changes in configuration. You may want to:
+* Change application environment to production in config.rb:
 ```
 environment 'production'
 ```
-If you wish to deamonize application set
+* Deamonize puma http server by setting
 ```
-daemonize false
+daemonize true
 ```
 in config.rb.
 
 
 ## Running
 ```
-puma -C config.rb
-```
-or
-```
 bundle exec puma -C config.rb
 ```
-or
-```
-rackup
-```
-(ignores config.rb file).
 
 ## Usage
 
