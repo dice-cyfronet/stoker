@@ -26,7 +26,7 @@ module Stoker
       end
       post do
         puts "Generating load at #{params[:core_percentage]}% for #{params[:timeout]}"
-        sh_pid = spawn("stress --cpu 1 --vm 1 --vm-bytes #{params[:memory]}M --vm-hang 0 --timeout #{params[:timeout]} > /dev/null 2> /dev/null")
+        sh_pid = spawn("stress --cpu 1 --vm 1 --vm-bytes #{params[:memory] || 16}M --vm-hang 0 --timeout #{params[:timeout]} > /dev/null 2> /dev/null")
         stress_pid = get_child_processes_pids(sh_pid).first
         puts "Stress pid: #{stress_pid}"
         Process.detach(sh_pid)
