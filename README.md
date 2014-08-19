@@ -6,18 +6,19 @@
 * Bundler (http://http://bundler.io/)
 
 ## Installation
-Clone stoker git repository
 
+- Clone stoker git repository
+```
 git clone git@dev.cyfronet.pl:atmosphere/stoker.git
-
-Enter stoker directory.
-
+```
+- Enter stoker directory.
+```
 cd stoker
-
-Install required gems
-
+```
+- Install required gems
+```
 bundle install
-
+```
 ## Configuration
 
 Change application environment in config.rb for instance to:
@@ -58,3 +59,9 @@ Creates a job running for 180 seconds that uses 70% of one core and 16MB RAM.
 curl -H "Content-Type: application/json" -d '{"core_percentage":70, "memory": 64, "timeout": 180}' http://localhost:9292/loads
 ```
 Creates a job running for 180 seconds that uses 70% of one core and allocates 64MB RAM.
+
+Parameters of the request:
+* core_percentage can vary from 1 to 100 and defines single core usage in %.
+* memory can vary from 1 to memory available at host expressed in MB.
+* timeout specifies in seconds how long the job will run.
+ 
