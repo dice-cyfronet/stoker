@@ -22,10 +22,11 @@ module Stoker
       params do
         requires :core_percentage, type: Integer, values: 1..100, desc: 'Percentage of single core usage ranging from 1 to 100'
         requires :timeout, type: Integer, desc: 'How long the process generating load will run in seconds'
+        optional :memory, type: Integer, desc: 'How much RAM in MB will be allocated. Default 16MB.'
       end
       post do
         puts "Generating load at #{params[:core_percentage]}% for #{params[:timeout]}"
-        sh_pid = spawn("stress --cpu 1 --timeout #{params[:timeout]} > /dev/null 2> /dev/null")
+        sh_pid = spawn("stress --cpu 1 --vm 1 --vm-bytes #{params[:memory]}M --vm-hang 0 --timeout #{params[:timeout]} > /dev/null 2> /dev/null")
         stress_pid = get_child_processes_pids(sh_pid).first
         puts "Stress pid: #{stress_pid}"
         Process.detach(sh_pid)
