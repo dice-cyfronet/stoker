@@ -3,6 +3,7 @@
 * Linux stress tool
 * Linux cpulimit tool
 * Ruby (developed and tested with 2.1.2)
+* git
 * Bundler (http://http://bundler.io/)
 
 ## Installation
