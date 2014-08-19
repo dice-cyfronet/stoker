@@ -7,18 +7,19 @@
 
 ## Installation
 
-- Clone stoker git repository
+1. Clone stoker git repository
 ```
 git clone git@dev.cyfronet.pl:atmosphere/stoker.git
 ```
-- Enter stoker directory.
+2. Enter stoker directory.
 ```
 cd stoker
 ```
-- Install required gems
+3. Install required gems
 ```
 bundle install
 ```
+
 ## Configuration
 
 Change application environment in config.rb for instance to:
@@ -64,4 +65,3 @@ Parameters of the request:
 * core_percentage can vary from 1 to 100 and defines single core usage in %.
 * memory can vary from 1 to memory available at host expressed in MB.
 * timeout specifies in seconds how long the job will run.
- 
