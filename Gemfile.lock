@@ -56,3 +56,4 @@ PLATFORMS
 DEPENDENCIES
   grape (= 0.8.0)
   puma
+

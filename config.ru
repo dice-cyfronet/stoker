@@ -4,3 +4,4 @@ require 'grape'
 $: << '.'
 require 'stoker'
 run Stoker::StokerREST
+

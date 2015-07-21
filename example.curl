@@ -1,7 +1,8 @@
 Single core 70% load for 180 seconds.
 
-curl -H "Content-Type: application/json" -d '{"core_percentage":70, "timeout": 180}' http://localhost:9292/loads
+curl -H "Content-Type: application/json" -d '{"core_percentage": 70, "timeout": 180}' http://localhost:9292/loads
 
 Single core 70% load for 180 seconds plus 64MB RAM allocation.
 
-curl -H "Content-Type: application/json" -d '{"core_percentage":70, "memory": 64, "timeout": 180}' http://localhost:9292/loads
+curl -H "Content-Type: application/json" -d '{"core_percentage": 70, "memory": 64, "timeout": 180}' http://localhost:9292/loads
+
