@@ -57,3 +57,5 @@ DEPENDENCIES
   grape (= 0.8.0)
   puma
 
+BUNDLED WITH
+   1.10.4
