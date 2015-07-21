@@ -1,5 +1,7 @@
 stoker.sublime-workspace
+stoker.sublime-project
 *.log
 .bundle
 vendor
+config.rb
 
