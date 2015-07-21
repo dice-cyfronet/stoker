@@ -12,10 +12,8 @@ Stoker should be run from a normal user account and can be installed without sup
 
 1. Clone stoker git repository
 ```
-export GIT_SSL_NO_VERIFY=1
-git clone https://gitlab.dev.cyfronet.pl/atmosphere/stoker.git
+git clone git@github.com:dice-cyfronet/stoker.git
 ```
-Server certificate needs to be disabled since dice's gitlab uses self-signed certificate.
 2. Enter stoker directory.
 ```
 cd stoker
@@ -66,3 +64,4 @@ Parameters of the request:
 * core_percentage can vary from 1 to 100 and defines single core usage in %.
 * memory can vary from 1 to memory available at host expressed in MB.
 * timeout specifies in seconds how long the job will run.
+
